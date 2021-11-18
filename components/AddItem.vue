@@ -62,15 +62,16 @@
               <rect width="4" height="4" rx="2" fill="#FF8484" />
             </svg>
           </div>
-          <input
+          <imask-input
             v-model="ItemPrice"
-            v-validate="'required|numeric'"
-            type="number"
+            v-validate="'required'"
+            :mask="'000 000 000'"
+            :unmask="false"
             name="Price"
             class="FormInputField"
             placeholder="Введите цену"
             required
-          >
+          />
           <p />
         </div>
       </div>
@@ -84,12 +85,16 @@
 <script>
 import Vue from 'vue'
 import VeeValidate from 'vee-validate'
+import { IMaskComponent } from 'vue-imask'
 import { emitter } from '@/assets/js/event-bus.js'
 
 Vue.use(VeeValidate)
 
 export default {
   name: 'AddItem',
+  components: {
+    'imask-input': IMaskComponent
+  },
   data () {
     return {
       ItemName: null,
@@ -100,7 +105,7 @@ export default {
   },
   computed: {
     ButtonIsValid () {
-      if ((this.ItemName && this.isURL(this.ItemImgUrl) && this.ItemPrice && !isNaN(this.ItemPrice))) {
+      if ((this.ItemName && this.isURL(this.ItemImgUrl) && this.ItemPrice && (this.ItemPrice))) {
         return true
       }
       return false
@@ -136,7 +141,7 @@ export default {
     },
 
     checkForm () {
-      if (this.ItemName && this.isURL(this.ItemImgUrl) && !isNaN(this.ItemPrice)) {
+      if (this.ItemName && this.isURL(this.ItemImgUrl) && (this.ItemPrice)) {
         const ItemPayload = {
           Name: this.ItemName,
           Desc: this.ItemDesc,
@@ -156,14 +161,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-textarea:focus{
-  outline: 1px solid gray;
-}
-
-input:focus{
-  outline: 1px solid gray;
-}
 
 .AddItemHolder{
   align-self: flex-start;
@@ -247,7 +244,7 @@ input:focus{
 }
 
 .Requered > input{
-  border: 1px solid $mainWarningColor;
+  outline: 1px solid $mainWarningColor;
 }
 
 .Requered > p::after{
@@ -262,6 +259,14 @@ input:focus{
   display: block;
   position: absolute;
   word-break: keep-all;
+}
+
+textarea:focus{
+  outline: 1px solid gray;
+}
+
+input:focus{
+  outline: 1px solid gray;
 }
 
 </style>
