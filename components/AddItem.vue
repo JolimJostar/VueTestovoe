@@ -102,30 +102,26 @@ export default {
     ButtonIsValid () {
       if ((this.ItemName && this.isURL(this.ItemImgUrl) && this.ItemPrice && !isNaN(this.ItemPrice))) {
         return true
-      } else {
-        return false
       }
+      return false
     },
     NameIsntValid () {
       if (this.errors.first('Name')) {
         return true
-      } else {
-        return false
       }
+      return false
     },
     UrlIsntValid () {
       if (this.errors.first('Url')) {
         return true
-      } else {
-        return false
       }
+      return false
     },
     PriceIsntValid () {
       if (this.errors.first('Price')) {
         return true
-      } else {
-        return false
       }
+      return false
     }
   },
   methods: {
