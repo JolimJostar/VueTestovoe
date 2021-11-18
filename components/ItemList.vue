@@ -47,26 +47,29 @@ export default {
   components: { Item, Preloader },
   data () {
     return {
-      Items: [],
+      Items: [
+        {
+          Name: 'test1',
+          Desc: 'test decs',
+          Url: 'https://i.ibb.co/Pjy2VLJ/Item-Photo.png',
+          Price: '10000',
+          ItemId: 0
+        }, {
+          Name: 'test3',
+          Desc: '',
+          Url: 'https://i.ibb.co/Pjy2VLJ/Item-Photo.png',
+          Price: '10000',
+          ItemId: 1
+        }, {
+          Name: 'test2',
+          Desc: 'test decs',
+          Url: 'https://i.ibb.co/Pjy2VLJ/Item-Photo.png',
+          Price: '10000',
+          ItemId: 2
+        }
+      ],
       selected: '1',
       loadind: true
-      /* {
-        Name: 'test1',
-        Desc: 'test decs',
-        Url: 'https://i.ibb.co/Pjy2VLJ/Item-Photo.png',
-        Price: '10000'
-      }, {
-        Name: 'test3',
-        Desc: '',
-        Url: 'https://i.ibb.co/Pjy2VLJ/Item-Photo.png',
-        Price: '10000'
-      }, {
-        Name: 'test2',
-        Desc: 'test decs',
-        Url: 'https://i.ibb.co/Pjy2VLJ/Item-Photo.png',
-        Price: '10000'
-      }
-      ] */
     }
   },
   computed: {
