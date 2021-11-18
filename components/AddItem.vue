@@ -92,19 +92,6 @@ import { emitter } from '@/assets/js/event-bus.js'
 
 Vue.use(VeeValidate)
 
-/* const numberMask = IMask(element, {
-  mask: Number, // enable number mask
-  scale: 2, // digits after point, 0 for integers
-  signed: false, // disallow negative
-  thousandsSeparator: '', // any single char
-  padFractionalZeros: false, // if true, then pads zeros at end to the length of scale
-  normalizeZeros: true, // appends or removes zeros at ends
-  radix: ',', // fractional delimiter
-  mapToRadix: ['.'], // symbols to process as radix
-  min: -100000,
-  max: 100000
-}) */
-
 export default {
   name: 'AddItem',
   components: {
