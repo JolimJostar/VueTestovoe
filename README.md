@@ -3,17 +3,17 @@
 ## Build Setup
 
 ```bash
-# install dependencies
+# Установить зависимости
 $ npm install
 
-# serve with hot reload at localhost:3000
+# запустить с реактивным обновлением на localhost:3000
 $ npm run dev
 
-# build for production and launch server
+# создать и запустить билд для подакшена
 $ npm run build
 $ npm run start
 
-# generate static project
+# сгенерировать статически проект
 $ npm run generate
 ```
 
